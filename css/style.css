@@ -35,7 +35,8 @@ body {
 /* --- LEFT SIDE --- */
 
 #left-sub-container {
-    flex-grow: 0.35;
+    width: 30%;
+    border-right: 1px solid #B1B1B1;
 }
 
 #profile {
@@ -46,6 +47,7 @@ body {
 
     background-color: #EAEAEA;
     height: 72px;
+    width: 100%;
 
     padding-left: 10px;
     padding-right: 25px;
@@ -79,6 +81,8 @@ p {
     padding-left: 20px;
 
     height: 83px;
+    width: 100%;
+
     background-color: #8EDAFC;
 }
 
@@ -105,6 +109,7 @@ p {
 
 form {
     height: 50px;
+    width: 100%;
 }
 
 .my_input_group {
@@ -145,6 +150,5 @@ img {
 /* --- RIGHT SIDE --- */
 
 #right-sub-container {
-    border: 5px solid blue;
-    flex-grow: 1;
+    width: 70%;
 }

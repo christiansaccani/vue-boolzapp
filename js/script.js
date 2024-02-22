@@ -166,13 +166,18 @@ createApp({
                         }
                     ],
                 }
-            ]            
+            ],      
 
+            indexView: 0,
         }
     },
 
     methods: {
-        
+
+        changeIndexView(index) {
+            this.indexView = index;
+            console.log(this.indexView);
+        }
     },
 
     mounted() {

@@ -51,7 +51,8 @@
             </form>
 
             <div id="my_contacts"
-            v-for="(item, index) in contacts" :key="contacts">
+            v-for="(item, itemIndex) in contacts" :key="contacts"
+            @click="changeIndexView(itemIndex)">
                 <img :src=" item.avatar " alt="">
                 <div id="info-box">
                     <div>
@@ -67,6 +68,18 @@
 
         <div id="right-sub-container">
             
+            <div id="profile">
+                <div id="io-profile">
+                    <img :src="contacts[indexView].avatar" alt="">
+                    <p>{{contacts[indexView].name}}</p>
+                </div>
+                <div id="menu-profile">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-comment"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+
         </div>
 
 
