@@ -26,4 +26,16 @@ body {
 
     position: absolute;
     top: 25px;
+
+    display: flex;
+}
+
+#left-sub-container {
+    border: 5px solid red;
+    flex-grow: 0.7;
+}
+
+#right-sub-container {
+    border: 5px solid blue;
+    flex-grow: 1;
 }
