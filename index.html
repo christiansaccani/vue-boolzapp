@@ -90,6 +90,7 @@
                     <div class="message"
                     :class="messageItem.status === 'sent' ? 'sent' : 'received'">
                         {{ messageItem.message }}
+                        <p>{{ messageItem.date.slice(11, 16) }}</p>
                     </div>     
                 </div>
             </div>

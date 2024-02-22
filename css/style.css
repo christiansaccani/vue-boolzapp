@@ -157,18 +157,46 @@ img {
     height: calc(100% - 72px);
     width: 100%;
 
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
     padding: 4em 8em;
 }
 
+.chat {
+    display: flex;
+    flex-direction: column;
+}
+
 .message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     max-width: 320px;
     width: 100%;
+    height: 50px;
+    padding-left: 1em;
+
+    border-radius: 12px;
+    font-size: .9em;
 }
 
 .sent {
     background-color: whitesmoke;
+    align-self: flex-end;
+    
 }
 
 .received {
     background-color: #D5F9BA;
+}
+
+.message p {
+    align-self: flex-end;
+    
+    font-size: .7em;
+    padding: 5px;
 }
