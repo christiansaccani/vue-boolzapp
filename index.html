@@ -87,7 +87,10 @@
             :style="{ backgroundImage: 'url(' + imageBg + ')' }">
                 <div class="chat"
                 v-for="(messageItem, messageItemIndex) in contacts[indexView].messages" :key="messagesIndex">
-                    {{ messageItem.message }}
+                    <div class="message"
+                    :class="messageItem.status === 'sent' ? 'sent' : 'received'">
+                        {{ messageItem.message }}
+                    </div>     
                 </div>
             </div>
 
