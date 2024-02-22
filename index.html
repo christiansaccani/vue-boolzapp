@@ -28,7 +28,7 @@
                     <img src="img/avatar_io.jpg" alt="">
                     <p>Chris</p>
                 </div>
-                <div id="menu-profile">
+                <div id="menu">
                     <i class="fa-solid fa-circle-notch"></i>
                     <i class="fa-solid fa-comment"></i>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -71,12 +71,23 @@
             <div id="profile">
                 <div id="io-profile">
                     <img :src="contacts[indexView].avatar" alt="">
-                    <p>{{contacts[indexView].name}}</p>
+                    <div>
+                        {{contacts[indexView].name}}
+                        <p>Ultimo accesso oggi alle 12:00</p>   <!-- provvisorio -->
+                    </div>
                 </div>
-                <div id="menu-profile">
-                    <i class="fa-solid fa-circle-notch"></i>
-                    <i class="fa-solid fa-comment"></i>
+                <div id="menu">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
                     <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div> 
+
+            <div id="conversation-pannel"
+            :style="{ backgroundImage: 'url(' + imageBg + ')' }">
+                <div class="chat"
+                v-for="(messageItem, messageItemIndex) in contacts[indexView].messages" :key="messagesIndex">
+                    {{ messageItem.message }}
                 </div>
             </div>
 

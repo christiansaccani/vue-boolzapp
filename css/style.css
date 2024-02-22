@@ -35,7 +35,7 @@ body {
 /* --- LEFT SIDE --- */
 
 #left-sub-container {
-    width: 30%;
+    width: 35%;
     border-right: 1px solid #B1B1B1;
 }
 
@@ -63,7 +63,7 @@ p {
     margin-bottom: 0 !important;
 }
 
-#menu-profile {
+#menu {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -150,5 +150,25 @@ img {
 /* --- RIGHT SIDE --- */
 
 #right-sub-container {
-    width: 70%;
+    width: 65%;
+}
+
+#conversation-pannel {
+    height: calc(100% - 72px);
+    width: 100%;
+
+    padding: 4em 8em;
+}
+
+.message {
+    max-width: 320px;
+    width: 100%;
+}
+
+.sent {
+    background-color: whitesmoke;
+}
+
+.received {
+    background-color: #D5F9BA;
 }

@@ -169,6 +169,7 @@ createApp({
             ],      
 
             indexView: 0,
+            imageBg: 'img/mine.jpg'
         }
     },
 
