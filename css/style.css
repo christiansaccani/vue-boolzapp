@@ -154,7 +154,7 @@ img {
 }
 
 #conversation-pannel {
-    height: calc(100% - 72px);
+    height: calc(100% - 72px - 70px);
     width: 100%;
 
     display: flex;
@@ -180,7 +180,7 @@ img {
     height: 50px;
     padding-left: 1em;
 
-    border-radius: 12px;
+    border-radius: 7px;
     font-size: .9em;
 }
 
@@ -196,7 +196,22 @@ img {
 
 .message p {
     align-self: flex-end;
-    
+
     font-size: .7em;
-    padding: 5px;
+    padding: 3px;
+}
+
+#chat-bar {
+    display: flex;
+    align-items: center;
+    height: 70px;
+}
+
+.my_btn_chat {
+    padding: 0 30px !important;
+}
+
+.my_btn_chat i {
+    font-size: 20px;
+    color: #6b6b6b;
 }
