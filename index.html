@@ -22,6 +22,46 @@
     <div id="app" class="container px-0">
         
         <div id="left-sub-container">
+            
+            <div id="profile">
+                <div id="io-profile">
+                    <img src="img/avatar_io.jpg" alt="">
+                    <p>Chris</p>
+                </div>
+                <div id="menu-profile">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-comment"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+
+            <div id="banner">
+                <i class="fa-solid fa-bell-slash"></i>
+                <div id="banner-textbox">
+                    <p>Ricevi notifiche di nuovi messaggi</p>
+                    <a href="#">Attiva notifiche desktop</a>
+                </div>
+            </div>
+
+            <form action="">
+                <div class="input-group flex-nowrap my_input_group">
+                    <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+            </form>
+
+            <div id="my_contacts"
+            v-for="(item, index) in contacts" :key="contacts">
+                <img :src=" item.avatar " alt="">
+                <div id="info-box">
+                    <div>
+                        {{ item.name }}
+                        <p>ultimo messaggio inviato</p>   <!-- provvisorio -->
+                    </div>
+                    <p id="lm-hour">12:00</p>   <!-- provvisorio -->
+                </div>
+                
+            </div>
 
         </div>
 
