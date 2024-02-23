@@ -50,7 +50,7 @@
                 </div>
             </form>
 
-            <div class="my_contacts"
+            <div id="my_contacts"
             v-for="(item, itemIndex) in contacts" :key="contacts"
             @click="changeIndexView(itemIndex)"
             :class="indexView === itemIndex ? 'active' : ''">
@@ -101,6 +101,7 @@
                     <button class="btn my_btn_chat" type="button" id="button-addon1"><i class="fa-regular fa-face-smile"></i></button>
 
                     <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"
+                    v-model="newMyChat"
                     @keyup.enter="sendChat()">
 
                     <button class="btn my_btn_chat" type="button" id="button-addon1"><i class="fa-solid fa-microphone"></i></button>

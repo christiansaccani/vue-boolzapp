@@ -123,7 +123,7 @@ form {
     background-color: #EAEAEA;
 }
 
-.my_contacts {
+#my_contacts {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -226,5 +226,5 @@ img {
 }
 
 .active {
-    background-color: #EAEAEA;
+    background-color: #cccccc !important;
 }
