@@ -123,7 +123,7 @@ form {
     background-color: #EAEAEA;
 }
 
-#my_contacts {
+.my_contacts {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -223,4 +223,8 @@ img {
 .my_btn_chat i {
     font-size: 20px;
     color: #6b6b6b;
+}
+
+.active {
+    background-color: #EAEAEA;
 }
