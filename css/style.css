@@ -192,13 +192,13 @@ img {
 }
 
 .received {
-    background-color: whitesmoke;
+    background-color: #D5F9BA;
     align-self: flex-end;
     
 }
 
 .sent {
-    background-color: #D5F9BA;
+    background-color: whitesmoke;
 }
 
 .message p {
