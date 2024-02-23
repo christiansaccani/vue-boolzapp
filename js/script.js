@@ -187,9 +187,10 @@ createApp({
             const newElement = this.contacts[this.indexView];
             const newData = moment().format('DD/MM/YYYY HH:mm:ss') //moment.js
 
-            newElement.messages.push({date: newData,
-                                    message: this.newMyChat,
-                                    status: 'received'});
+            newElement.messages.push({
+                date: newData,
+                message: this.newMyChat,
+                status: 'received'});
             this.newMyChat = "";
         },
 
@@ -203,7 +204,7 @@ createApp({
                     message: 'ok',
                     status: 'sent'
                 });
-            }, 1000); // Ritardo di 1000 millisecondi (1 secondo)
+            }, 1000); // Ritardo di 1000 millisecondi (1 secondo), la arrow è necessaria al funzionamento
         }
 
     },
