@@ -186,7 +186,8 @@ createApp({
             console.log("sendChat:", this.indexView);
 
             const newElement = this.contacts[this.indexView];
-            newElement.messages.push({message: this.newMyChat,
+            newElement.messages.push({date: '10/01/2020 15:51:00',
+                                    message: this.newMyChat,
                                     status: 'received'});
             this.newMyChat = "";
             console.log(newElement.messages)
