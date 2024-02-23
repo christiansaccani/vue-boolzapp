@@ -170,7 +170,7 @@ createApp({
 
             indexView: 0,
             imageBg: 'img/mine.jpg',
-            newMyChat: '',
+            newMyChat: "",
         }
     },
 
@@ -186,8 +186,10 @@ createApp({
             console.log("sendChat:", this.indexView);
 
             const newElement = this.contacts[this.indexView];
-            newElement.messages.push({message: this.newMyChat});
-            console.log(newElement.messages);
+            newElement.messages.push({message: this.newMyChat,
+                                    status: 'received'});
+            this.newMyChat = "";
+            console.log(newElement.messages)
         }
     },
 
