@@ -46,14 +46,20 @@
                 </div>
             </div>
 
-            <form action="">
+            <div>
                 <div class="input-group flex-nowrap my_input_group">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button @click="filterAndClean()"
+                    class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i></button>
                     <input v-model="filter"
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Cerca o inizia una nuova chat" 
+                    aria-label="Username" 
+                    aria-describedby="addon-wrapping"
                     @input="filterMethod()"
-                    type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+                    @keyup.enter="filterAndClean()">>
                 </div>
-            </form>
+            </div>
 
             <div id="my_contacts"
             v-for="(item, itemIndex) in contacts" :key="contacts"

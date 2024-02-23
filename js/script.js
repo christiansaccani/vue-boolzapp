@@ -220,6 +220,11 @@ createApp({
             });
 
             console.log(this.filterArray)
+        },
+
+        filterAndClean() {
+            this.filterMethod;
+            this.filter = "";
         }
 
     },
