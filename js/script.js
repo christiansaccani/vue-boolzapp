@@ -183,17 +183,29 @@ createApp({
 
         sendChat() {
             index = this.indexView;
-            console.log("sendChat:", this.indexView);
 
             const newElement = this.contacts[this.indexView];
-            const newData = moment().format('DD/MM/YYYY HH:mm:ss')
+            const newData = moment().format('DD/MM/YYYY HH:mm:ss') //moment.js
 
             newElement.messages.push({date: newData,
                                     message: this.newMyChat,
                                     status: 'received'});
             this.newMyChat = "";
-            console.log(newElement.messages)
+        },
+
+        answerChat() {
+            setTimeout(() => {
+                const newElement = this.contacts[this.indexView];
+                const newData = moment().format('DD/MM/YYYY HH:mm:ss');
+        
+                newElement.messages.push({
+                    date: newData,
+                    message: 'ok',
+                    status: 'sent'
+                });
+            }, 1000); // Ritardo di 1000 millisecondi (1 secondo)
         }
+
     },
 
     mounted() {

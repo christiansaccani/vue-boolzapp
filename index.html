@@ -18,7 +18,7 @@
 
     <!-- Includi Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    
+
     <!-- VUE 3 -->
     <script src="https://unpkg.com/vue@3"></script>
 
@@ -108,7 +108,7 @@
                     class="form-control" 
                     aria-label="Example text with button addon" 
                     aria-describedby="button-addon1"
-                    @keyup.enter="sendChat()">
+                    @keyup.enter="sendChat(); answerChat()">
 
                     <button class="btn my_btn_chat" type="button" id="button-addon1"><i class="fa-solid fa-microphone"></i></button>
                 </div>
