@@ -214,7 +214,7 @@ createApp({
             const contactsEl = this.contacts; 
 
             contactsEl.forEach(element => {
-                if (element.name.includes(this.filter)) {
+                if (element.name.toLowerCase().includes(this.filter.toLowerCase())) {
                     this.filterArray.push(element);
                 }
             });
@@ -222,8 +222,8 @@ createApp({
             console.log(this.filterArray)
         },
 
-        filterAndClean() {
-            this.filterMethod;
+        filterClean() {
+            this.filterArray = [];
             this.filter = "";
         }
 

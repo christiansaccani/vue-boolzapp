@@ -48,7 +48,7 @@
 
             <div>
                 <div class="input-group flex-nowrap my_input_group">
-                    <button @click="filterAndClean()"
+                    <button @click="filterClean()"
                     class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i></button>
                     <input v-model="filter"
                     type="text" 
@@ -57,23 +57,40 @@
                     aria-label="Username" 
                     aria-describedby="addon-wrapping"
                     @input="filterMethod()"
-                    @keyup.enter="filterAndClean()">>
+                    @keyup.enter="filterClean()">
                 </div>
             </div>
 
-            <div id="my_contacts"
-            v-for="(item, itemIndex) in contacts" :key="contacts"
-            @click="changeIndexView(itemIndex)"
-            :class="indexView === itemIndex ? 'active' : ''">
-                <img :src=" item.avatar " alt="">
-                <div id="info-box">
-                    <div>
-                        {{ item.name }}
-                        <p>ultimo messaggio inviato</p>   <!-- provvisorio -->
-                    </div>
-                    <p id="lm-hour">12:00</p>   <!-- provvisorio -->
+            <div v-if="filterArray.length < 1">
+                <div id="my_contacts"
+                v-for="(item, itemIndex) in contacts" :key="contacts"
+                @click="changeIndexView(itemIndex)"
+                :class="indexView === itemIndex ? 'active' : ''">
+                    <img :src=" item.avatar " alt="">
+                    <div id="info-box">
+                        <div>
+                            {{ item.name }}
+                            <p>ultimo messaggio inviato</p>   <!-- provvisorio -->
+                        </div>
+                        <p id="lm-hour">12:00</p>   <!-- provvisorio -->
+                    </div> 
                 </div>
-                
+            </div>
+
+            <div v-else>
+                <div id="my_contacts"
+                v-for="(item, itemIndex) in filterArray" :key="contacts"
+                @click="changeIndexView(itemIndex)"
+                :class="indexView === itemIndex ? 'active' : ''">
+                    <img :src=" item.avatar " alt="">
+                    <div id="info-box">
+                        <div>
+                            {{ item.name }}
+                            <p>ultimo messaggio inviato</p>   <!-- provvisorio -->
+                        </div>
+                        <p id="lm-hour">12:00</p>   <!-- provvisorio -->
+                    </div> 
+                </div>
             </div>
 
         </div>
