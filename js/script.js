@@ -182,7 +182,7 @@ createApp({
         },
 
         sendChat() {
-            index = this.indexView;
+            indexMemory = this.indexView;
 
             const newElement = this.contacts[this.indexView];
             const newData = moment().format('DD/MM/YYYY HH:mm:ss') //moment.js
@@ -196,7 +196,7 @@ createApp({
 
         answerChat() {
             setTimeout(() => {
-                const newElement = this.contacts[this.indexView];
+                const newElement = this.contacts[indexMemory];  // 
                 const newData = moment().format('DD/MM/YYYY HH:mm:ss');
         
                 newElement.messages.push({
