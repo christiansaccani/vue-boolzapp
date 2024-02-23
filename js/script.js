@@ -171,6 +171,8 @@ createApp({
             indexView: 0,
             imageBg: 'img/mine.jpg',
             newMyChat: "",
+            filter: "",
+            filterArray: [],
         }
     },
 
@@ -205,6 +207,19 @@ createApp({
                     status: 'sent'
                 });
             }, 1000); // Ritardo di 1000 millisecondi (1 secondo), la arrow è necessaria al funzionamento
+        },
+
+        filterMethod() {
+            this.filterArray = [];
+            const contactsEl = this.contacts; 
+
+            contactsEl.forEach(element => {
+                if (element.name.includes(this.filter)) {
+                    this.filterArray.push(element);
+                }
+            });
+
+            console.log(this.filterArray)
         }
 
     },
