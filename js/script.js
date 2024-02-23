@@ -178,6 +178,11 @@ createApp({
         changeIndexView(index) {
             this.indexView = index;
             console.log(this.indexView);
+        },
+
+        sendChat() {
+            index = this.indexView;
+            console.log("sendChat:", this.indexView);
         }
     },
 
