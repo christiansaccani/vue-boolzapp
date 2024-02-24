@@ -169,6 +169,7 @@ createApp({
             ],      
 
             indexView: 0,
+            indexMessage: 0,
             imageBg: 'img/mine.jpg',
             newMyChat: "",
             filter: "",
@@ -225,7 +226,16 @@ createApp({
         filterClean() {
             this.filterArray = [];
             this.filter = "";
-        }
+        },
+
+        changeindexMessage(index) {
+            this.indexMessage = index;
+            console.log(this.indexMessage);
+        },
+
+        deleteMessage() {
+            const newElement = this.contacts[this.indexView];
+        },
 
     },
 
