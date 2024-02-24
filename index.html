@@ -102,8 +102,9 @@
                     <img :src="contacts[indexView].avatar" alt="">
                     <div>
                         {{contacts[indexView].name}}
-                        <p v-if="onlineBoolean === false">Offline</p>
-                        <p v-else>Sta scrivendo...</p>
+                        <p v-if="onlineStatus === 1">{{ contacts[indexView].messages.filter(message => message.status === 'sent').pop().date.slice(11, 16) }}</p>
+                        <p v-else-if="onlineStatus === 2">Sta scrivendo...</p>
+                        <p v-else>Online</p>
                     </div>
                 </div>
                 <div id="menu">

@@ -173,7 +173,7 @@ createApp({
             newMyChat: "",
             filter: "",
             filterArray: [],
-            onlineBoolean: false,
+            onlineStatus: 1,
         }
     },
 
@@ -198,7 +198,7 @@ createApp({
         },
 
         answerChat() {
-            this.onlineBoolean = true;
+            this.onlineStatus = 2;
 
             setTimeout(() => {
                 
@@ -209,10 +209,15 @@ createApp({
                     date: newData,
                     message: 'ok',
                     status: 'sent'
+                
                 });
+                this.onlineStatus = 3;
 
-                this.onlineBoolean = false;
             }, 1000); // Ritardo di 1000 millisecondi (1 secondo), la arrow è necessaria al funzionamento          
+
+            setTimeout(() => {
+                this.onlineStatus = 1;
+            }, 2000);
         },
 
         filterMethod() {
