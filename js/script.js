@@ -244,16 +244,17 @@ createApp({
             newElement.splice(index, 1);
         },
 
-        salvaElemento() {
+        salvaElementoMounted() {
             this.contacts.forEach(element => {
                 this.shownMessArray.push(element.messages[element.messages.length - 1]);
             });
-        }      
+        }
 
     },
 
     mounted() {
-        this.salvaElemento();
+        this.salvaElementoMounted();
+        console.log(this.shownMessArray)
     },
 
 }).mount("#app");
