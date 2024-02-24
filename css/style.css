@@ -178,6 +178,8 @@ img {
 }
 
 .message {
+    position: relative;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -189,6 +191,22 @@ img {
 
     border-radius: 7px;
     font-size: .9em;
+}
+
+.my_dropdown {
+    position: absolute;
+    right: 0px;
+
+    display: none;
+}
+
+.message:hover .my_dropdown {
+    display: inline;
+    z-index: 5;
+}
+
+.my_toggle {
+    border: none;
 }
 
 .received {

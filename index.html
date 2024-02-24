@@ -120,6 +120,15 @@
                     :class="messageItem.status === 'sent' ? 'sent' : 'received'">
                         {{ messageItem.message }}
                         <p>{{ messageItem.date.slice(11, 16) }}</p>
+                        
+                        <div class="dropdown my_dropdown">
+                            <button class="btn dropdown-toggle my_toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Delete message</a></li>
+                            </ul>
+                        </div>
+
                     </div>     
                 </div>
             </div>
