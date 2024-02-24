@@ -173,6 +173,7 @@ createApp({
             newMyChat: "",
             filter: "",
             filterArray: [],
+            onlineBoolean: false,
         }
     },
 
@@ -197,7 +198,10 @@ createApp({
         },
 
         answerChat() {
+            this.onlineBoolean = true;
+
             setTimeout(() => {
+                
                 const newElement = this.contacts[indexMemory];  // 
                 const newData = moment().format('DD/MM/YYYY HH:mm:ss');
         
@@ -206,7 +210,9 @@ createApp({
                     message: 'ok',
                     status: 'sent'
                 });
-            }, 1000); // Ritardo di 1000 millisecondi (1 secondo), la arrow è necessaria al funzionamento
+
+                this.onlineBoolean = false;
+            }, 1000); // Ritardo di 1000 millisecondi (1 secondo), la arrow è necessaria al funzionamento          
         },
 
         filterMethod() {

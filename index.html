@@ -70,9 +70,9 @@
                     <div id="info-box">
                         <div>
                             {{ item.name }}
-                            <p>ultimo messaggio inviato</p>   <!-- provvisorio -->
+                            <p>{{item.messages[item.messages.length - 1].message}}</p>
                         </div>
-                        <p id="lm-hour">12:00</p>   <!-- provvisorio -->
+                        <p id="lm-hour">{{ item.messages[item.messages.length - 1].date.slice(11, 16) }}</p>
                     </div> 
                 </div>
             </div>
@@ -86,9 +86,9 @@
                     <div id="info-box">
                         <div>
                             {{ item.name }}
-                            <p>ultimo messaggio inviato</p>   <!-- provvisorio -->
+                            <p>{{ item.messages[item.messages.length - 1].message }}</p>
                         </div>
-                        <p id="lm-hour">12:00</p>   <!-- provvisorio -->
+                        <p id="lm-hour">{{ item.messages[item.messages.length - 1].date.slice(11, 16) }}</p>
                     </div> 
                 </div>
             </div>
@@ -102,7 +102,8 @@
                     <img :src="contacts[indexView].avatar" alt="">
                     <div>
                         {{contacts[indexView].name}}
-                        <p>Ultimo accesso oggi alle 12:00</p>   <!-- provvisorio -->
+                        <p v-if="onlineBoolean === false">Offline</p>
+                        <p v-else>Sta scrivendo...</p>
                     </div>
                 </div>
                 <div id="menu">
