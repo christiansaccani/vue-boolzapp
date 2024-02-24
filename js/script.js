@@ -173,6 +173,7 @@ createApp({
             newMyChat: "",
             filter: "",
             filterArray: [],
+            shownMessArray: [],
             onlineStatus: 1,
         }
     },
@@ -243,10 +244,16 @@ createApp({
             newElement.splice(index, 1);
         },
 
+        salvaElemento() {
+            this.contacts.forEach(element => {
+                this.shownMessArray.push(element.messages[element.messages.length - 1]);
+            });
+        }      
+
     },
 
     mounted() {
-
+        this.salvaElemento();
     },
 
 }).mount("#app");
