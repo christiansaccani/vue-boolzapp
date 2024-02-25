@@ -245,9 +245,15 @@ createApp({
         },
 
         salvaElementoMounted() {
-            this.contacts.forEach(element => {
-                this.shownMessArray.push(element.messages[element.messages.length - 1]);
-            });
+            this.contacts.forEach(function(element) {
+                const sentMessages = element.messages.filter(function(message) {
+                    return message.status === 'sent';
+                });
+                if (sentMessages.length > 0) {
+                    this.shownMessArray.push(sentMessages[sentMessages.length - 1]);
+                }
+            }, this);  //il this alla fine serve a far si che venga pushato
+                        //sempre l'oggetto di cui sto parlando nel ciclo
         }
 
     },

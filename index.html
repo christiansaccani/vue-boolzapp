@@ -102,7 +102,8 @@
                     <img :src="contacts[indexView].avatar" alt="">
                     <div>
                         {{contacts[indexView].name}}
-                        <p v-if="onlineStatus === 1">{{ shownMessArray[indexView] }}</p>
+                        <!-- Il "? serve a non generare un errore nel momento in cui non viene restituito un risultato (null o undefined)" -->
+                        <p v-if="onlineStatus === 1 && shownMessArray[indexView]?.date">Ultimo accesso alle {{ shownMessArray[indexView].date.slice(11, 16) }}</p>
                         <p v-else-if="onlineStatus === 2">Sta scrivendo...</p>
                         <p v-else>Online</p>
                     </div>
