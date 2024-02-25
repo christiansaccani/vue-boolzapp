@@ -9,6 +9,7 @@ createApp({
                     name: 'Michele',
                     avatar: 'img/avatar_1.jpg',
                     visible: true,
+                    onlineStatus: 1,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -31,6 +32,7 @@ createApp({
                     name: 'Fabio',
                     avatar: 'img/avatar_2.jpg',
                     visible: true,
+                    onlineStatus: 1,
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
@@ -53,6 +55,7 @@ createApp({
                     name: 'Samuele',
                     avatar: 'img/avatar_3.jpg',
                     visible: true,
+                    onlineStatus: 1,
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -75,6 +78,7 @@ createApp({
                     name: 'Alessandro B.',
                     avatar: 'img/avatar_4.jpg',
                     visible: true,
+                    onlineStatus: 1,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -92,6 +96,7 @@ createApp({
                     name: 'Alessandro L.',
                     avatar: 'img/avatar_5.jpg',
                     visible: true,
+                    onlineStatus: 1,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -109,6 +114,7 @@ createApp({
                     name: 'Claudia',
                     avatar: 'img/avatar_6.jpg',
                     visible: true,
+                    onlineStatus: 1,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -131,6 +137,7 @@ createApp({
                     name: 'Federico',
                     avatar: 'img/avatar_7.jpg',
                     visible: true,
+                    onlineStatus: 1,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -148,6 +155,7 @@ createApp({
                     name: 'Davide',
                     avatar: 'img/avatar_8.jpg',
                     visible: true,
+                    onlineStatus: 1,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -178,7 +186,6 @@ createApp({
             messageRecived: false,
             filterArray: [],
             shownMessArray: [],
-            onlineStatus: [],
         }
     },
 
@@ -210,7 +217,7 @@ createApp({
         },
 
         answerChat() {
-            this.onlineStatus[this.indexMemory] = 2; // Modifica solo l'elemento corrispondente all'indice this.indexMemory
+            this.contacts[this.indexView].onlineStatus = 2; // Modifica solo l'elemento corrispondente all'indice this.indexMemory
         
             setTimeout(() => {
                 const newElement = this.contacts[this.indexMemory];
@@ -228,12 +235,12 @@ createApp({
                     status: 'sent'
                 };
         
-                this.onlineStatus[this.indexMemory] = 3;
+                this.contacts[this.indexView].onlineStatus = 3;
         
             }, 1000);
         
             setTimeout(() => {
-                this.onlineStatus[this.indexMemory] = 1;
+                this.contacts[this.indexView].onlineStatus = 1;
             }, 2000);
         },
 

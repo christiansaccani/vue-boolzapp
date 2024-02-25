@@ -102,9 +102,9 @@
                     <img :src="contacts[indexView].avatar" alt="">
                     <div>
                         {{contacts[indexView].name}}
-                        <!-- Il "? serve a non generare un errore nel momento in cui non viene restituito un risultato (null o undefined)" -->
-                        <p v-if="onlineStatus[indexView] === 1 && shownMessArray[indexView]?.date">Ultimo accesso alle {{ shownMessArray[indexView].date.slice(11, 16) }}</p>
-                        <p v-else-if="onlineStatus[indexView] === 2">Sta scrivendo...</p>
+                        <!-- Il "? serve a non generare un errore nel momento in cui non viene restituito un risultato (null o undefined)(fino al mounted)" -->
+                        <p v-if="contacts[indexView].onlineStatus === 1 && shownMessArray[indexView]?.date">Ultimo accesso alle {{ shownMessArray[indexView].date.slice(11, 16) }}</p>
+                        <p v-else-if="contacts[indexView].onlineStatus === 2">Sta scrivendo...</p>
                         <p v-else>Online</p>
                     </div>
                 </div>
