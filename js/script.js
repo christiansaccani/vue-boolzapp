@@ -209,9 +209,15 @@ createApp({
                 newElement.messages.push({
                     date: newData,
                     message: 'ok',
-                    status: 'sent'
-                
+                    status: 'sent'              
                 });
+
+                this.shownMessArray[indexMemory] = {
+                    date: newData,
+                    message: 'ok',
+                    status: 'sent'
+                };
+
                 this.onlineStatus = 3;
 
             }, 1000); // Ritardo di 1000 millisecondi (1 secondo), la arrow è necessaria al funzionamento          
