@@ -210,35 +210,31 @@ createApp({
         },
 
         answerChat() {
-
-            if (messageRecived === true) {
-
-                this.onlineStatus[this.indexMemory] = 2;
-            
-                setTimeout(() => {
-                    const newElement = this.contacts[this.indexMemory];
-                    const newData = moment().format('DD/MM/YYYY HH:mm:ss');
-            
-                    newElement.messages.push({
-                        date: newData,
-                        message: 'ok',
-                        status: 'sent'              
-                    });
-            
-                    this.shownMessArray[this.indexMemory] = {
-                        message: 'ok',
-                        status: 'sent'
-                    };
-            
-                    this.onlineStatus[this.indexMemory] = 3;
-            
-                }, 1000);
-            
-                setTimeout(() => {
-                    this.onlineStatus[this.indexMemory] = 1;
-                }, 2000);
-                messageRecived = false;
-            }
+            this.onlineStatus[this.indexMemory] = 2; // Modifica solo l'elemento corrispondente all'indice this.indexMemory
+        
+            setTimeout(() => {
+                const newElement = this.contacts[this.indexMemory];
+                const newData = moment().format('DD/MM/YYYY HH:mm:ss');
+        
+                newElement.messages.push({
+                    date: newData,
+                    message: 'ok',
+                    status: 'sent'              
+                });
+        
+                this.shownMessArray[this.indexMemory] = {
+                    date: newData,
+                    message: 'ok',
+                    status: 'sent'
+                };
+        
+                this.onlineStatus[this.indexMemory] = 3;
+        
+            }, 1000);
+        
+            setTimeout(() => {
+                this.onlineStatus[this.indexMemory] = 1;
+            }, 2000);
         },
 
         filterMethod() {
