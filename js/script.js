@@ -169,12 +169,13 @@ createApp({
             ],      
 
             indexView: 0,
+            indexMemory: 0,
             imageBg: 'img/mine.jpg',
             newMyChat: "",
             filter: "",
             filterArray: [],
             shownMessArray: [],
-            onlineStatus: 1,
+            onlineStatus: [],
         }
     },
 
@@ -186,7 +187,7 @@ createApp({
         },
 
         sendChat() {
-            indexMemory = this.indexView;
+            this.indexMemory = this.indexView;
 
             const newElement = this.contacts[this.indexView];
             const newData = moment().format('DD/MM/YYYY HH:mm:ss') //moment.js
@@ -199,11 +200,10 @@ createApp({
         },
 
         answerChat() {
-            this.onlineStatus = 2;
-
+            this.onlineStatus[this.indexMemory] = 2; // Modifica solo l'elemento corrispondente all'indice this.indexMemory
+        
             setTimeout(() => {
-                
-                const newElement = this.contacts[indexMemory];  // 
+                const newElement = this.contacts[this.indexMemory];
                 const newData = moment().format('DD/MM/YYYY HH:mm:ss');
         
                 newElement.messages.push({
@@ -211,19 +211,19 @@ createApp({
                     message: 'ok',
                     status: 'sent'              
                 });
-
-                this.shownMessArray[indexMemory] = {
+        
+                this.shownMessArray[this.indexMemory] = { // Aggiorna shownMessArray con il nuovo messaggio
                     date: newData,
                     message: 'ok',
                     status: 'sent'
                 };
-
-                this.onlineStatus = 3;
-
-            }, 1000); // Ritardo di 1000 millisecondi (1 secondo), la arrow è necessaria al funzionamento          
-
+        
+                this.onlineStatus[this.indexMemory] = 3; // Modifica lo stato online solo per la chat corrente
+        
+            }, 1000);
+        
             setTimeout(() => {
-                this.onlineStatus = 1;
+                this.onlineStatus[this.indexMemory] = 1; // Ripristina lo stato online a 1 dopo 2 secondi
             }, 2000);
         },
 
@@ -266,7 +266,13 @@ createApp({
 
     mounted() {
         this.salvaElementoMounted();
-        console.log(this.shownMessArray)
+        console.log(this.shownMessArray);
+
+        this.onlineStatus.length = this.contacts.length;
+        this.onlineStatus.fill(1);
+
+        // questo comando può anche essere scritto:
+        // this.onlineStatus = Array(this.contacts.length).fill(1);
     },
 
 }).mount("#app");
