@@ -151,7 +151,8 @@
 
                     <button class="btn my_btn_chat" type="button" id="button-addon1">
                         <i v-if="newMyChat.trim() === ''" class="fa-solid fa-microphone"></i>
-                        <i v-else class="fa-solid fa-paper-plane"></i>
+                        <i v-else class="fa-solid fa-paper-plane"
+                        @click="sendChat(); answerChat()"></i>
                     </button>
                 </div>
             </div>
