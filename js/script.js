@@ -213,7 +213,7 @@ createApp({
 
             if (messageRecived === true) {
 
-                this.onlineStatus[this.indexMemory] = 2; // Modifica solo l'elemento corrispondente all'indice this.indexMemory
+                this.onlineStatus[this.indexMemory] = 2;
             
                 setTimeout(() => {
                     const newElement = this.contacts[this.indexMemory];
@@ -225,18 +225,18 @@ createApp({
                         status: 'sent'              
                     });
             
-                    this.shownMessArray[this.indexMemory] = { // Aggiorna shownMessArray con il nuovo messaggio
+                    this.shownMessArray[this.indexMemory] = {
                         date: newData,
                         message: 'ok',
                         status: 'sent'
                     };
             
-                    this.onlineStatus[this.indexMemory] = 3; // Modifica lo stato online solo per la chat corrente
+                    this.onlineStatus[this.indexMemory] = 3;
             
                 }, 1000);
             
                 setTimeout(() => {
-                    this.onlineStatus[this.indexMemory] = 1; // Ripristina lo stato online a 1 dopo 2 secondi
+                    this.onlineStatus[this.indexMemory] = 1;
                 }, 2000);
                 messageRecived = false;
             }
