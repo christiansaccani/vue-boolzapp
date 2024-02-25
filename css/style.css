@@ -240,6 +240,8 @@ img {
 
 .my_btn_chat {
     padding: 0 30px !important;
+    max-width: 100px;
+    width: 100%;
 }
 
 .my_btn_chat i {
