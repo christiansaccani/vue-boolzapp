@@ -171,8 +171,11 @@ createApp({
             indexView: 0,
             indexMemory: 0,
             imageBg: 'img/mine.jpg',
+
             newMyChat: "",
             filter: "",
+
+            messageRecived: false,
             filterArray: [],
             shownMessArray: [],
             onlineStatus: [],
@@ -187,44 +190,56 @@ createApp({
         },
 
         sendChat() {
+            const trimInput = this.newMyChat.trim();
+        
+            // Controlla se l'input non è vuoto
+            if (trimInput !== '') {
             this.indexMemory = this.indexView;
 
             const newElement = this.contacts[this.indexView];
-            const newData = moment().format('DD/MM/YYYY HH:mm:ss') //moment.js
+            const newData = moment().format('DD/MM/YYYY HH:mm:ss'); //moment.js
+
+            messageRecived = true;
 
             newElement.messages.push({
                 date: newData,
                 message: this.newMyChat,
                 status: 'received'});
+            }
             this.newMyChat = "";
         },
 
         answerChat() {
-            this.onlineStatus[this.indexMemory] = 2; // Modifica solo l'elemento corrispondente all'indice this.indexMemory
-        
-            setTimeout(() => {
-                const newElement = this.contacts[this.indexMemory];
-                const newData = moment().format('DD/MM/YYYY HH:mm:ss');
-        
-                newElement.messages.push({
-                    date: newData,
-                    message: 'ok',
-                    status: 'sent'              
-                });
-        
-                this.shownMessArray[this.indexMemory] = { // Aggiorna shownMessArray con il nuovo messaggio
-                    date: newData,
-                    message: 'ok',
-                    status: 'sent'
-                };
-        
-                this.onlineStatus[this.indexMemory] = 3; // Modifica lo stato online solo per la chat corrente
-        
-            }, 1000);
-        
-            setTimeout(() => {
-                this.onlineStatus[this.indexMemory] = 1; // Ripristina lo stato online a 1 dopo 2 secondi
-            }, 2000);
+
+            if (messageRecived === true) {
+
+                this.onlineStatus[this.indexMemory] = 2; // Modifica solo l'elemento corrispondente all'indice this.indexMemory
+            
+                setTimeout(() => {
+                    const newElement = this.contacts[this.indexMemory];
+                    const newData = moment().format('DD/MM/YYYY HH:mm:ss');
+            
+                    newElement.messages.push({
+                        date: newData,
+                        message: 'ok',
+                        status: 'sent'              
+                    });
+            
+                    this.shownMessArray[this.indexMemory] = { // Aggiorna shownMessArray con il nuovo messaggio
+                        date: newData,
+                        message: 'ok',
+                        status: 'sent'
+                    };
+            
+                    this.onlineStatus[this.indexMemory] = 3; // Modifica lo stato online solo per la chat corrente
+            
+                }, 1000);
+            
+                setTimeout(() => {
+                    this.onlineStatus[this.indexMemory] = 1; // Ripristina lo stato online a 1 dopo 2 secondi
+                }, 2000);
+                messageRecived = false;
+            }
         },
 
         filterMethod() {
