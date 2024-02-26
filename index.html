@@ -56,14 +56,13 @@
                     placeholder="Cerca o inizia una nuova chat" 
                     aria-label="Username" 
                     aria-describedby="addon-wrapping"
-                    @input="filterMethod()"
                     @keyup.enter="filterClean()">
                 </div>
             </div>
 
             <div v-if="filterArray.length < 1">
                 <div id="my_contacts"
-                v-for="(item, itemIndex) in contacts" :key="contacts"
+                v-for="(item, itemIndex) in filteredList" :key="contacts"
                 @click="changeIndexView(itemIndex)"
                 :class="indexView === itemIndex ? 'active' : ''">
                     <img :src=" item.avatar " alt="">
@@ -76,23 +75,6 @@
                     </div> 
                 </div>
             </div>
-
-            <div v-else>
-                <div id="my_contacts"
-                v-for="(item, itemIndex) in filterArray" :key="contacts"
-                @click="changeIndexView(item.id)"
-                :class="indexView === item.id ? 'active' : ''">
-                    <img :src=" item.avatar " alt="">
-                    <div id="info-box">
-                        <div>
-                            {{ item.name }}
-                            <p>{{ item.messages[item.messages.length - 1].message }}</p>
-                        </div>
-                        <p id="lm-hour">{{ item.messages[item.messages.length - 1].date.slice(11, 16) }}</p>
-                    </div> 
-                </div>
-            </div>
-
         </div>
 
         <div id="right-sub-container">
