@@ -70,9 +70,9 @@
                     <div id="info-box">
                         <div>
                             {{ item.name }}
-                            <p>{{item.messages[item.messages.length - 1].message}}</p>
+                            <p>{{ item.messages.length > 0 ? item.messages[item.messages.length - 1].message : '' }}</p>
                         </div>
-                        <p id="lm-hour">{{ item.messages[item.messages.length - 1].date.slice(11, 16) }}</p>
+                        <p id="lm-hour">{{ item.messages.length > 0 ? item.messages[item.messages.length - 1].date.slice(11, 16) : '' }}</p>
                     </div> 
                 </div>
             </div>

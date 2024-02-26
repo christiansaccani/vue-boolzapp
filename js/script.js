@@ -273,7 +273,7 @@ createApp({
 
         deleteAllMessages() {
             const newElement = this.contacts[this.indexView];
-            newElement.messages.splice(1, newElement.messages.length);
+            newElement.messages = [];
         },
 
         salvaElementoMounted() {
