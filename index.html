@@ -103,7 +103,7 @@
                     <div>
                         {{contacts[indexView].name}}
                         <!-- Il "? serve a non generare un errore nel momento in cui non viene restituito un risultato (null o undefined)(fino al mounted)" -->
-                        <p v-if="contacts[indexView].onlineStatus === 1 && shownMessArray[indexView]?.date">Ultimo accesso alle {{ shownMessArray[indexView].date.slice(11, 16) }}</p>
+                        <p v-if="contacts[indexView].onlineStatus === 1 && contacts[indexView].shownMess?.date">Ultimo accesso alle {{ contacts[indexView].shownMess.date.slice(11, 16) }}</p>
                         <p v-else-if="contacts[indexView].onlineStatus === 2">Sta scrivendo...</p>
                         <p v-else-if="contacts[indexView].onlineStatus === 3">Online</p>
                     </div>

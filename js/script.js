@@ -27,6 +27,7 @@ createApp({
                             status: 'received'
                         }
                     ],
+                    shownMess: "",
                 },
                 {
                     name: 'Fabio',
@@ -50,6 +51,7 @@ createApp({
                             status: 'sent'
                         }
                     ],
+                    shownMess: "",
                 },
                 {
                     name: 'Samuele',
@@ -73,6 +75,7 @@ createApp({
                             status: 'received'
                         }
                     ],
+                    shownMess: "",
                 },
                 {
                     name: 'Alessandro B.',
@@ -91,6 +94,7 @@ createApp({
                             status: 'received'
                         }
                     ],
+                    shownMess: "",
                 },
                 {
                     name: 'Alessandro L.',
@@ -109,6 +113,7 @@ createApp({
                             status: 'received'
                         }
                     ],
+                    shownMess: "",
                 },
                 {
                     name: 'Claudia',
@@ -132,6 +137,7 @@ createApp({
                             status: 'sent'
                         }
                     ],
+                    shownMess: "",
                 },
                 {
                     name: 'Federico',
@@ -150,6 +156,7 @@ createApp({
                             status: 'received'
                         }
                     ],
+                    shownMess: "",
                 },
                 {
                     name: 'Davide',
@@ -173,6 +180,7 @@ createApp({
                             status: 'received'
                         }
                     ],
+                    shownMess: "",
                 }
             ],      
 
@@ -183,9 +191,7 @@ createApp({
             newMyChat: "",
             filter: "",
 
-            messageReceived: false,
             filterArray: [],
-            shownMessArray: [],
         }
     },
 
@@ -206,8 +212,6 @@ createApp({
             const newElement = this.contacts[this.indexView];
             const newData = moment().format('DD/MM/YYYY HH:mm:ss'); //moment.js
 
-            messageReceived = true;
-
             newElement.messages.push({
                 date: newData,
                 message: this.newMyChat,
@@ -217,7 +221,7 @@ createApp({
         },
 
         answerChat() {
-            this.contacts[this.indexView].onlineStatus = 2; // Modifica solo l'elemento corrispondente all'indice this.indexMemory
+            this.contacts[this.indexMemory].onlineStatus = 2; // Modifica solo l'elemento corrispondente all'indice this.indexMemory
         
             setTimeout(() => {
                 const newElement = this.contacts[this.indexMemory];
@@ -229,7 +233,7 @@ createApp({
                     status: 'sent'              
                 });
         
-                this.shownMessArray[this.indexMemory] = {
+                newElement.shownMess = {
                     date: newData,
                     message: 'ok',
                     status: 'sent'
@@ -273,7 +277,7 @@ createApp({
                     return message.status === 'sent';
                 });
                 if (sentMessages.length > 0) {
-                    this.shownMessArray.push(sentMessages[sentMessages.length - 1]);
+                    element.shownMess = sentMessages[sentMessages.length - 1];
                 }
             }, this);  //il this alla fine serve a far si che venga pushato
                         //sempre l'oggetto di cui sto parlando nel ciclo
