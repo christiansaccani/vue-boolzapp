@@ -222,6 +222,14 @@ createApp({
                 status: 'received'});
             }
             this.newMyChat = "";
+
+            this.$nextTick(() => {
+                // Scorri fino in fondo al pannello della conversazione
+                const conversationPannel = document.getElementById('conversation-pannel');
+                if (conversationPannel) {
+                    conversationPannel.scrollTop = conversationPannel.scrollHeight;
+                }
+            });
         },
 
         answerChat() {
@@ -318,6 +326,15 @@ createApp({
             this.valueName = "";
             this.valuePic = "";
         },
+
+        getTextStyle(text) {
+            // Controllo se il testo contiene spazi o se è uno spam senza spazi
+            if (text.indexOf(" ") !== -1) {
+                return { overflowWrap: "break-word" };
+            } else {
+                return { wordBreak: "break-all" };
+            }
+        }
     },
 
     computed: {

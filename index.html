@@ -151,10 +151,10 @@
             :style="{ backgroundImage: 'url(' + imageBg + ')' }">
                 <div class="chat"
                 v-for="(messageItem, messageItemIndex) in contacts[indexView].messages" :key="messagesIndex">
-                    <div class="message"
+                    <div class="message" :style="getTextStyle(messageItem.message)"
                     :class="messageItem.status === 'sent' ? 'sent' : 'received'">
-                        {{ messageItem.message }}
-                        <p>{{ messageItem.date.slice(11, 16) }}</p>
+                        <p class="pTxt">{{ messageItem.message }}</p>
+                        <p class="pTime">{{ messageItem.date.slice(11, 16) }}</p>
                         
                         <div class="dropdown my_dropdown">
                             <button class="btn dropdown-toggle my_toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

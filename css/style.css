@@ -197,8 +197,8 @@ img {
 
     max-width: 320px;
     width: 100%;
-    height: 50px;
-    padding-left: 1em;
+    
+    padding: 1em 0em 0em 1em;
 
     border-radius: 7px;
     font-size: .9em;
@@ -230,7 +230,12 @@ img {
     background-color: whitesmoke;
 }
 
-.message p {
+.message .pTxt {
+    max-width: 85%;
+    padding-bottom: 1em;
+}
+
+.message .pTime {
     align-self: flex-end;
 
     font-size: .7em;
