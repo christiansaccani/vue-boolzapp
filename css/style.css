@@ -258,3 +258,7 @@ img {
 .active {
     background-color: #cccccc !important;
 }
+
+.my_padding {
+    padding: 0;
+}
