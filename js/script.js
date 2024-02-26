@@ -250,6 +250,14 @@ createApp({
                     message: 'ok',
                     status: 'sent'
                 };
+
+                this.$nextTick(() => {
+                    // Scorri fino in fondo al pannello della conversazione
+                    const conversationPannel = document.getElementById('conversation-pannel');
+                    if (conversationPannel) {
+                        conversationPannel.scrollTop = conversationPannel.scrollHeight;
+                    }
+                });
         
                 this.contacts[this.indexMemory].onlineStatus = 3;
         
@@ -258,6 +266,8 @@ createApp({
             setTimeout(() => {
                 this.contacts[this.indexMemory].onlineStatus = 1;
             }, 2000);
+
+            
         },
 
         filterMethod() {
