@@ -183,7 +183,7 @@ createApp({
             newMyChat: "",
             filter: "",
 
-            messageRecived: false,
+            messageReceived: false,
             filterArray: [],
             shownMessArray: [],
         }
@@ -206,7 +206,7 @@ createApp({
             const newElement = this.contacts[this.indexView];
             const newData = moment().format('DD/MM/YYYY HH:mm:ss'); //moment.js
 
-            messageRecived = true;
+            messageReceived = true;
 
             newElement.messages.push({
                 date: newData,
@@ -235,12 +235,12 @@ createApp({
                     status: 'sent'
                 };
         
-                this.contacts[this.indexView].onlineStatus = 3;
+                this.contacts[this.indexMemory].onlineStatus = 3;
         
             }, 1000);
         
             setTimeout(() => {
-                this.contacts[this.indexView].onlineStatus = 1;
+                this.contacts[this.indexMemory].onlineStatus = 1;
             }, 2000);
         },
 

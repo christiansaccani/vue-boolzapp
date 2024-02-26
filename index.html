@@ -105,13 +105,29 @@
                         <!-- Il "? serve a non generare un errore nel momento in cui non viene restituito un risultato (null o undefined)(fino al mounted)" -->
                         <p v-if="contacts[indexView].onlineStatus === 1 && shownMessArray[indexView]?.date">Ultimo accesso alle {{ shownMessArray[indexView].date.slice(11, 16) }}</p>
                         <p v-else-if="contacts[indexView].onlineStatus === 2">Sta scrivendo...</p>
-                        <p v-else>Online</p>
+                        <p v-else-if="contacts[indexView].onlineStatus === 3">Online</p>
                     </div>
                 </div>
                 <div id="menu">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <i class="fa-solid fa-paperclip"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                    <div class="dropdown">
+                        <button class="btn my_toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"
+                                @click="deleteMessage(messageItemIndex)"
+                                >Delete Messages</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#"
+                                @click="deleteMessage(messageItemIndex)"
+                                >Delete Chat</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
                 </div>
             </div> 
 
