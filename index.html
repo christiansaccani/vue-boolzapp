@@ -64,8 +64,8 @@
             <div v-if="filterArray.length < 1">
                 <div id="my_contacts"
                 v-for="(item, itemIndex) in contacts" :key="contacts"
-                @click="changeIndexView(item.id)"
-                :class="indexView === item.id ? 'active' : ''">
+                @click="changeIndexView(itemIndex)"
+                :class="indexView === itemIndex ? 'active' : ''">
                     <img :src=" item.avatar " alt="">
                     <div id="info-box">
                         <div>
