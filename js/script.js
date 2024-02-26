@@ -6,6 +6,7 @@ createApp({
 
             contacts: [
                 {
+                    id: 0,
                     name: 'Michele',
                     avatar: 'img/avatar_1.jpg',
                     visible: true,
@@ -30,6 +31,7 @@ createApp({
                     shownMess: "",
                 },
                 {
+                    id: 1,
                     name: 'Fabio',
                     avatar: 'img/avatar_2.jpg',
                     visible: true,
@@ -54,6 +56,7 @@ createApp({
                     shownMess: "",
                 },
                 {
+                    id: 2,
                     name: 'Samuele',
                     avatar: 'img/avatar_3.jpg',
                     visible: true,
@@ -78,6 +81,7 @@ createApp({
                     shownMess: "",
                 },
                 {
+                    id: 3,
                     name: 'Alessandro B.',
                     avatar: 'img/avatar_4.jpg',
                     visible: true,
@@ -97,6 +101,7 @@ createApp({
                     shownMess: "",
                 },
                 {
+                    id: 4,
                     name: 'Alessandro L.',
                     avatar: 'img/avatar_5.jpg',
                     visible: true,
@@ -116,6 +121,7 @@ createApp({
                     shownMess: "",
                 },
                 {
+                    id: 5,
                     name: 'Claudia',
                     avatar: 'img/avatar_6.jpg',
                     visible: true,
@@ -140,6 +146,7 @@ createApp({
                     shownMess: "",
                 },
                 {
+                    id: 6,
                     name: 'Federico',
                     avatar: 'img/avatar_7.jpg',
                     visible: true,
@@ -159,6 +166,7 @@ createApp({
                     shownMess: "",
                 },
                 {
+                    id: 7,
                     name: 'Davide',
                     avatar: 'img/avatar_8.jpg',
                     visible: true,
@@ -274,6 +282,10 @@ createApp({
         deleteAllMessages() {
             const newElement = this.contacts[this.indexView];
             newElement.messages = [];
+        },
+
+        deleteChat(index) {
+            this.contacts.splice(index, 1);
         },
 
         salvaElementoMounted() {

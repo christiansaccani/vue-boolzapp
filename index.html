@@ -64,8 +64,8 @@
             <div v-if="filterArray.length < 1">
                 <div id="my_contacts"
                 v-for="(item, itemIndex) in contacts" :key="contacts"
-                @click="changeIndexView(itemIndex)"
-                :class="indexView === itemIndex ? 'active' : ''">
+                @click="changeIndexView(item.id)"
+                :class="indexView === item.id ? 'active' : ''">
                     <img :src=" item.avatar " alt="">
                     <div id="info-box">
                         <div>
@@ -80,8 +80,8 @@
             <div v-else>
                 <div id="my_contacts"
                 v-for="(item, itemIndex) in filterArray" :key="contacts"
-                @click="changeIndexView(itemIndex)"
-                :class="indexView === itemIndex ? 'active' : ''">
+                @click="changeIndexView(item.id)"
+                :class="indexView === item.id ? 'active' : ''">
                     <img :src=" item.avatar " alt="">
                     <div id="info-box">
                         <div>
@@ -122,7 +122,7 @@
                                 >Delete Messages</a>
                             </li>
                             <li><a class="dropdown-item" href="#"
-                                @click="deleteMessage()"
+                                @click="deleteChat(indexView)"
                                 >Delete Chat</a>
                             </li>
                         </ul>
