@@ -44,16 +44,25 @@
                         <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Contact</h1>
+                            <h1 class="modal-title fs-5 text-black" id="exampleModalLabel">Add New Contact</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <input type="text" class="form-control" placeholder="New Contact's Name" aria-label="Username" aria-describedby="addon-wrapping">
-                                <input type="text" class="form-control mt-3" placeholder="New Contact's Pic" aria-label="Username" aria-describedby="addon-wrapping">
+                                <input v-model="valueName"
+                                type="text" class="form-control" placeholder="New Contact's Name" aria-label="Username" aria-describedby="addon-wrapping"
+                                >
+                                <input v-model="valuePic"
+                                type="text" class="form-control mt-3" placeholder="New Contact's Pic" aria-label="Username" aria-describedby="addon-wrapping"
+                                >
                             </div>
                             <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Delete</button>
-                            <button type="button" class="btn btn-primary">Add</button>
+                            <button type="button" class="btn btn-secondary" 
+                            @click="newContactInputClean(valueName, valuePic)"
+                            data-bs-dismiss="modal">Delete</button>
+
+                            <button type="button" class="btn btn-primary"
+                            @click="newContactInput(valueName, valuePic)"
+                            data-bs-dismiss="modal">Add</button>
                             </div>
                         </div>
                         </div>
@@ -70,7 +79,7 @@
                     <a href="#">Attiva notifiche desktop</a>
                 </div>
             </div>
-
+            
             <div>
                 <div class="input-group flex-nowrap my_input_group">
                     <button @click="filterClean()"
@@ -85,7 +94,7 @@
                 </div>
             </div>
 
-            <div v-if="filterArray.length < 1">
+            <div>
                 <div id="my_contacts"
                 v-for="(item, itemIndex) in filteredList" :key="contacts"
                 @click="changeIndexView(itemIndex)"

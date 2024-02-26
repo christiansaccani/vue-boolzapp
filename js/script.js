@@ -192,6 +192,10 @@ createApp({
             filter: "",
 
             filterArray: [],
+
+            valueName: "",
+            valuePic: "",
+
         }
     },
 
@@ -290,8 +294,30 @@ createApp({
                 }
             }, this);  //il this alla fine serve a far si che venga pushato
                         //sempre l'oggetto di cui sto parlando nel ciclo
-        }
+        },
 
+        newContactInput(valueName, valuePic) {
+            console.log("Valore dell'input A:", valueName);
+            console.log("Valore dell'input B:", valuePic);
+
+            this.contacts.push({
+                name: valueName,
+                avatar: valuePic,
+                visible: true,
+                onlineStatus: 1,
+                messages: [],
+                shownMess: "",
+            })
+
+            this.valueName = "";
+            this.valuePic = "";
+
+        },
+
+        newContactInputClean(valueName, valuePic) {
+            this.valueName = "";
+            this.valuePic = "";
+        },
     },
 
     computed: {
