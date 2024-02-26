@@ -271,6 +271,11 @@ createApp({
             newElement.splice(index, 1);
         },
 
+        deleteAllMessages() {
+            const newElement = this.contacts[this.indexView];
+            newElement.messages.splice(1, newElement.messages.length);
+        },
+
         salvaElementoMounted() {
             this.contacts.forEach(function(element) {
                 const sentMessages = element.messages.filter(function(message) {
@@ -287,13 +292,6 @@ createApp({
 
     mounted() {
         this.salvaElementoMounted();
-        console.log(this.shownMessArray);
-
-        this.onlineStatus.length = this.contacts.length;
-        this.onlineStatus.fill(1);
-
-        // questo comando può anche essere scritto:
-        // this.onlineStatus = Array(this.contacts.length).fill(1);
     },
 
 }).mount("#app");
