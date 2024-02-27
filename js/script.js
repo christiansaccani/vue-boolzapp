@@ -239,6 +239,8 @@ createApp({
             valueName: "",
             valuePic: "",
 
+            darkMode: false,
+
         }
     },
 
@@ -254,15 +256,17 @@ createApp({
         
             // Controlla se l'input non è vuoto
             if (trimInput !== '') {
-            this.indexMemory = this.indexView;
+                this.indexMemory = this.indexView;
 
-            const newElement = this.contacts[this.indexView];
-            const newData = moment().format('DD/MM/YYYY HH:mm:ss'); //moment.js
+                const newElement = this.contacts[this.indexView];
+                const newData = moment().format('DD/MM/YYYY HH:mm:ss'); //moment.js
 
-            newElement.messages.push({
-                date: newData,
-                message: this.newMyChat,
-                status: 'received'});
+                newElement.messages.push({
+                    date: newData,
+                    message: this.newMyChat,
+                    status: 'received'});
+
+                this.answerChat();
             }
             this.newMyChat = "";
 
@@ -273,6 +277,8 @@ createApp({
                     conversationPannel.scrollTop = conversationPannel.scrollHeight;
                 }
             });
+
+            
         },
 
         answerChat() {
@@ -394,6 +400,10 @@ createApp({
                 return { wordBreak: "break-all" };
             }
         },
+
+        darkModeToggle() {
+            this.darkMode = !this.darkMode;
+        }
     },
 
     computed: {

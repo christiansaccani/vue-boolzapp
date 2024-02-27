@@ -270,3 +270,105 @@ img {
 .my_padding {
     padding: 0;
 }
+
+/* --- Dark Mode CSS */
+
+.darkMode#left-sub-container {
+    background-color: rgb(49, 16, 26);
+}
+
+.darkMode#left-sub-container #profile {
+    background-color: rgb(49, 16, 26);
+    color: rgb(214, 216, 207);
+}
+
+.darkMode#left-sub-container #banner {
+    background-color: #1a222a;
+    color: white;
+    border-top: 1px solid rgb(214, 216, 207);
+}
+
+.darkMode#left-sub-container #banner .fa-bell-slash {
+    color: rgb(214, 216, 207);
+    background-color: #1a222a;
+}
+
+.darkMode#left-sub-container #banner p, .darkMode#left-sub-container #banner a{
+    color: rgb(214, 216, 207);
+}
+
+.darkMode#left-sub-container .my_input_group {
+    background-color: rgb(214, 216, 207);
+}
+
+.darkMode#left-sub-container #my_contacts {
+    background-color: rgb(49, 16, 26);
+    border-color: rgb(214, 216, 207);
+    color: rgb(214, 216, 207);
+}
+
+.darkMode#left-sub-container #my_contacts.active {
+    background-color: rgb(156, 49, 23) !important;
+    border-color: rgb(214, 216, 207);
+    color: rgb(214, 216, 207);
+}
+
+/* ------------------------------------------------------- */
+
+.darkModeMessage#conversation-pannel {
+    filter: invert(100%);
+    border-top: 1px solid #292730;
+}
+
+.darkModeMessage.received {
+    background-color: #63cee8;
+}
+
+.darkModeMessage.sent {
+    background-color: #292730;
+    color: white;
+}
+
+.darkMode#right-sub-container #profile {
+    background-color: rgb(49, 16, 26);
+    color: rgb(214, 216, 207);
+}
+
+.darkMode#right-sub-container #chat-bar {
+    background-color: rgb(214, 216, 207);
+}
+
+.darkMode#right-sub-container #chat-bar i {
+    color: rgb(49, 16, 26);
+}
+
+/* ------------------------------------------------------- */
+
+.darkMode#left-sub-container .modal-content {
+    background-color: rgb(49, 16, 26);
+    color: rgb(214, 216, 207);
+}
+
+.darkMode#left-sub-container .modal-header {
+    border-bottom-color: rgb(214, 216, 207) ;
+}
+
+.darkMode#left-sub-container .modal-title {
+    color: rgb(214, 216, 207) !important;
+}
+
+.darkMode#left-sub-container .modal-footer {
+    border-top-color: rgb(214, 216, 207) ;
+}
+
+.darkMode#left-sub-container .btn-secondary.my_btn {
+    background-color: rgb(214, 216, 207) ;
+    border-color: rgb(214, 216, 207);
+    color: rgb(49, 16, 26);
+}
+
+.darkMode#left-sub-container .btn-primary.my_btn {
+    background-color: rgb(49, 16, 26) ;
+    border-color: rgb(49, 16, 26);
+    color: rgb(214, 216, 207);
+}
