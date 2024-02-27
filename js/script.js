@@ -6,7 +6,7 @@ createApp({
 
             contacts: [
                 {
-                    name: 'Michele',
+                    name: 'Jack Sparrow',
                     avatar: 'img/avatar_1.jpg',
                     visible: true,
                     onlineStatus: 1,
@@ -30,7 +30,7 @@ createApp({
                     shownMess: "",
                 },
                 {
-                    name: 'Fabio',
+                    name: 'Miranda Priestly',
                     avatar: 'img/avatar_2.jpg',
                     visible: true,
                     onlineStatus: 1,
@@ -54,7 +54,7 @@ createApp({
                     shownMess: "",
                 },
                 {
-                    name: 'Samuele',
+                    name: 'Dante Alighieri ',
                     avatar: 'img/avatar_3.jpg',
                     visible: true,
                     onlineStatus: 1,
@@ -78,7 +78,7 @@ createApp({
                     shownMess: "",
                 },
                 {
-                    name: 'Alessandro B.',
+                    name: 'Eren Jaeger',
                     avatar: 'img/avatar_4.jpg',
                     visible: true,
                     onlineStatus: 1,
@@ -97,7 +97,7 @@ createApp({
                     shownMess: "",
                 },
                 {
-                    name: 'Alessandro L.',
+                    name: 'Frida Kahlo',
                     avatar: 'img/avatar_5.jpg',
                     visible: true,
                     onlineStatus: 1,
@@ -116,7 +116,7 @@ createApp({
                     shownMess: "",
                 },
                 {
-                    name: 'Claudia',
+                    name: 'Spider-Man',
                     avatar: 'img/avatar_6.jpg',
                     visible: true,
                     onlineStatus: 1,
@@ -140,7 +140,7 @@ createApp({
                     shownMess: "",
                 },
                 {
-                    name: 'Federico',
+                    name: 'Barbie',
                     avatar: 'img/avatar_7.jpg',
                     visible: true,
                     onlineStatus: 1,
@@ -159,7 +159,7 @@ createApp({
                     shownMess: "",
                 },
                 {
-                    name: 'Davide',
+                    name: 'Iron-Man',
                     avatar: 'img/avatar_8.jpg',
                     visible: true,
                     onlineStatus: 1,
@@ -184,7 +184,7 @@ createApp({
                 }
             ],      
 
-            indexView: 0,
+            indexView: 5,
             indexMemory: 0,
             imageBg: 'img/mine.jpg',
 
@@ -332,7 +332,7 @@ createApp({
 
         },
 
-        newContactInputClean(valueName, valuePic) {
+        newContactInputClean() {
             this.valueName = "";
             this.valuePic = "";
         },
@@ -344,7 +344,7 @@ createApp({
             } else {
                 return { wordBreak: "break-all" };
             }
-        }
+        },
     },
 
     computed: {
@@ -356,7 +356,7 @@ createApp({
     },
 
     mounted() {
-        this.salvaElementoMounted();
+        this.salvaElementoMounted();   
     },
 
 }).mount("#app");
