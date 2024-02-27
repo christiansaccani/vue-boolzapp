@@ -13,12 +13,12 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Hai portato a spasso il cane?',
+                            message: 'Hai portato a spasso il rum?',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Ricordati di stendere i panni',
+                            message: 'Ricordati di stendere le scimmie!',
                             status: 'sent'
                         },
                         {
@@ -52,7 +52,7 @@ createApp({
                         },
                         {
                             date: '20/03/2020 16:35:00',
-                            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                            message: 'Mi piacerebbe ma non passo tempo con i falliti.',
                             status: 'sent'
                         }
                     ],
@@ -71,7 +71,7 @@ createApp({
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
-                            message: 'La Marianna va in campagna',
+                            message: 'Beatrice va in paradiso',
                             status: 'received'
                         },
                         {
@@ -101,7 +101,7 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Lo sai che ha aperto una nuova pizzeria?',
+                            message: "Farò fuori tutti i giganti! Dal primo all'ultimo!",
                             status: 'sent'
                         },
                         {
@@ -147,17 +147,17 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Ciao Claudia, hai novità?',
+                            message: 'Ehi! Secondo te il Cap me lo presta lo scudo?',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Non ancora',
+                            message: 'Eh, non credo proprio',
                             status: 'received'
                         },
                         {
                             date: '10/01/2020 15:51:00',
-                            message: 'Nessuna nuova, buona nuova',
+                            message: 'Se glielo chiedo per favore?',
                             status: 'sent'
                         }
                     ],
@@ -176,7 +176,7 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Fai gli auguri a Martina che è il suo compleanno!',
+                            message: 'Fai gli auguri a Barbie-Stramba che è il suo compleanno!',
                             status: 'sent'
                         },
                         {
@@ -222,11 +222,12 @@ createApp({
                         "Ehi, bimbo ragno!",
                         "Ci mettiamo un po' a riscaldarci, questo te lo concedo. Ma facciamo la conta dei presenti: tuo fratello, il semidio; un super soldato, una leggenda vivente che vive nella leggenda; un uomo con grossi problemi nel gestire la propria rabbia; un paio di assassini provetti. E tu bellimbusto sei riuscito a fare incazzare tutti quanti.",
                         "Noi abbiamo un Hulk.",
+                        "Solo un miliardario, filantropo e playboy",
                         ],
                 }
             ],      
 
-            indexView: 5,
+            indexView: 0,
             indexMemory: 0,
             imageBg: 'img/mine.jpg',
 
@@ -280,16 +281,22 @@ createApp({
             setTimeout(() => {
                 const newElement = this.contacts[this.indexMemory];
                 const newData = moment().format('DD/MM/YYYY HH:mm:ss');
+
+                function randomAnswer(array) {
+                    const index = Math.floor(Math.random() * array.length);
+                    return array[index];
+                }
+                const newAnswer = randomAnswer(newElement.answers);
         
                 newElement.messages.push({
                     date: newData,
-                    message: 'ok',
+                    message: newAnswer,
                     status: 'sent'              
                 });
         
                 newElement.shownMess = {
                     date: newData,
-                    message: 'ok',
+                    message: newAnswer,
                     status: 'sent'
                 };
 
