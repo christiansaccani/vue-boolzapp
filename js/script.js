@@ -28,6 +28,11 @@ createApp({
                         }
                     ],
                     shownMess: "",
+                    answers: [
+                        "Perché il rum finisce sempre? Ecco perché!",
+                        "Ma dov'è la scimmia? Mi ci vuole un bersaglio.",
+                        "Complicazioni sono sopraggiunte! Ma superate!",
+                        ],
                 },
                 {
                     name: 'Miranda Priestly',
@@ -52,6 +57,11 @@ createApp({
                         }
                     ],
                     shownMess: "",
+                    answers: [
+                        "Qualcuno sa dirmi perché il mio caffè non è ancora qui? È morta per caso?",
+                        "Fai tutto con estrema calma, sai quanto la cosa possa rendermi felice.",
+                        "I dettagli sulla tua incompetenza non mi interessano.",
+                        ],
                 },
                 {
                     name: 'Dante Alighieri ',
@@ -76,6 +86,12 @@ createApp({
                         }
                     ],
                     shownMess: "",
+                    answers: [
+                        "Amor, che a nullo amato amar perdona, mi prese del costui piacer sì forte, che, come vedi, ancor non m'abbandona.",
+                        "Nel mezzo del cammin di nostra vita…",
+                        "Più è tacer, che ragionare, onesto.",
+                        "Ma che ho scritto a fare la Divina Commedia se poi siamo regrediti maranza?",
+                        ],
                 },
                 {
                     name: 'Eren Jaeger',
@@ -95,6 +111,9 @@ createApp({
                         }
                     ],
                     shownMess: "",
+                    answers: [
+                        "Farò fuori tutti i giganti! Dal primo all'ultimo!"
+                        ],
                 },
                 {
                     name: 'Frida Kahlo',
@@ -114,6 +133,11 @@ createApp({
                         }
                     ],
                     shownMess: "",
+                    answers: [
+                        "Dipingo i fiori per non farli morire...",
+                        "SOLO LA VITA RIESCE A ESSERE OSCENA, INDEGNA, UMILIANTE.",
+                        "CHE FAREI IO SENZA L'ASSURDO?",
+                        ],
                 },
                 {
                     name: 'Spider-Man',
@@ -138,6 +162,11 @@ createApp({
                         }
                     ],
                     shownMess: "",
+                    answers: [
+                        "Non ho un documento d'identità con me, lo sai? Sennò l'anonimato del supereroe finirebbe.",
+                        "Andrai in battaglia vestito da giovane pastorello fico o hai la tuta?",
+                        "Sono solo un amichevole Spider-Man di quartiere!",
+                        ],
                 },
                 {
                     name: 'Barbie',
@@ -157,6 +186,11 @@ createApp({
                         }
                     ],
                     shownMess: "",
+                    answers: [
+                        "Io fascista? io non comando le ferrovie o il flusso del commercio!",
+                        "Il rosa non è solo un colore, è un atteggiamento.",
+                        "Avete mai pensato di morire!",
+                        ],
                 },
                 {
                     name: 'Iron-Man',
@@ -181,6 +215,14 @@ createApp({
                         }
                     ],
                     shownMess: "",
+                    answers: [
+                        "Io sono Iron-Man.",
+                        "Due Vodka Martini, molto secchi, molte olive e molto in fretta.",
+                        "È Natale! Siamo più cattivi!",
+                        "Ehi, bimbo ragno!",
+                        "Ci mettiamo un po' a riscaldarci, questo te lo concedo. Ma facciamo la conta dei presenti: tuo fratello, il semidio; un super soldato, una leggenda vivente che vive nella leggenda; un uomo con grossi problemi nel gestire la propria rabbia; un paio di assassini provetti. E tu bellimbusto sei riuscito a fare incazzare tutti quanti.",
+                        "Noi abbiamo un Hulk.",
+                        ],
                 }
             ],      
 
